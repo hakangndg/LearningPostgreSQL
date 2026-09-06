@@ -1,0 +1,12 @@
+= : Equal
+< : Less than
+> : Bigger than
+!= : Not Equal
+
+SELECT name || ', Area: ' || area AS sum 
+FROM cities
+WHERE area > 30;
+
+UPDATE cities
+SET area = 100
+WHERE name = 'Tokyo';
