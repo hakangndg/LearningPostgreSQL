@@ -1,0 +1,34 @@
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY, //with the usage of serial and primary key ; the ids will be generated automatically and they will be unique
+	username VARCHAR(50)
+); //creating a table for users
+
+
+INSERT INTO users (username)
+VALUES
+	('monahan93'),
+	('pfeffer'),
+	('99stroman'),
+	('sim3onis'); //inserting values to the users table
+
+SELECT * from users; //viewing the added entries
+
+//CREATING TABLE FOR PHOTOS
+CREATE TABLE photos (
+ id SERIAL PRIMARY KEY,
+ url VARCHAR(200),
+ user_id INTEGER REFERENCES users(id) //using foreign key
+);
+
+INSERT INTO photos (url,user_id)
+VALUES
+('http://one.jpg',4); //Adding an entry to photos table
+
+INSERT INTO photos(url,user_id)
+VALUES
+	('https://two.jpg',1),
+	('https://25.jpg',1),	
+	('https://36.jpg',1),
+	('https://754.jpg',2),
+	('https://35.jpg',3),
+	('https://256.jpg',4); //Adding other entries
