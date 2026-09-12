@@ -32,3 +32,10 @@ VALUES
 	('https://754.jpg',2),
 	('https://35.jpg',3),
 	('https://256.jpg',4); //Adding other entries
+
+
+
+
+
+user_id INTEGER REFERENCES users(id) ON DELETE CASCADE: Whenever a user is removed, photos which referenced to that person will also be removed
+user_id INTEGER REFERENCES users(id) ON DELETE SET NULL: Whenever a user is removed, foreign value of photos that refer to that user is will be set to null 
